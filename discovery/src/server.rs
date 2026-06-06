@@ -281,7 +281,7 @@ impl DiscoveryServer {
         event_tx: mpsc::UnboundedSender<DiscoveryEvent>,
     ) -> Result<Self, Error> {
         let discovery = RequestHandler::new(config, event_tx);
-        let address = if cfg!(windows) {
+        let address = if cfg!(windows) || cfg!(target_os = "haiku") {
             SocketAddr::new(Ipv4Addr::UNSPECIFIED.into(), *port)
         } else {
             // this creates a dual stack socket on non-windows systems
