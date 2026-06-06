@@ -215,3 +215,8 @@ clippy.redundant_closure_for_method_calls = "warn"
 
 [lints]
 workspace = true
+
+[patch.crates-io]
+mio = { git = "https://github.com/m199/mio", rev = "d20971c" }
+if-addrs = { git = "https://github.com/m199/if-addrs", rev = "64fe7fb" }
+libmdns = { git = "https://github.com/m199/libmdns", rev = "6e9ec50" }
